@@ -1,0 +1,127 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply border-cosmic-slate;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
+}
+
+/* Monochrome Syntax Highlighting for Code */
+@layer utilities {
+  .hljs {
+    @apply bg-transparent text-cosmic-light;
+  }
+  
+  .hljs-comment,
+  .hljs-quote {
+    @apply text-cosmic-subtle italic;
+  }
+  
+  .hljs-keyword,
+  .hljs-selector-tag,
+  .hljs-subst {
+    @apply text-cosmic-white font-semibold;
+  }
+  
+  .hljs-number,
+  .hljs-literal,
+  .hljs-variable,
+  .hljs-template-variable,
+  .hljs-tag .hljs-attr {
+    @apply text-cosmic-light;
+  }
+  
+  .hljs-string,
+  .hljs-doctag {
+    @apply text-cosmic-silver;
+  }
+  
+  .hljs-title,
+  .hljs-section,
+  .hljs-selector-id {
+    @apply text-cosmic-white font-bold;
+  }
+  
+  .hljs-type,
+  .hljs-class .hljs-title {
+    @apply text-cosmic-light font-semibold;
+  }
+  
+  .hljs-tag,
+  .hljs-name,
+  .hljs-attribute {
+    @apply text-cosmic-light;
+  }
+  
+  .hljs-regexp,
+  .hljs-link {
+    @apply text-cosmic-silver;
+  }
+  
+  .hljs-symbol,
+  .hljs-bullet {
+    @apply text-cosmic-white;
+  }
+  
+  .hljs-built_in,
+  .hljs-builtin-name {
+    @apply text-cosmic-light;
+  }
+  
+  .hljs-meta {
+    @apply text-cosmic-subtle;
+  }
+  
+  .hljs-deletion {
+    @apply bg-red-900/20;
+  }
+  
+  .hljs-addition {
+    @apply bg-green-900/20;
+  }
+  
+  .hljs-emphasis {
+    @apply italic;
+  }
+  
+  .hljs-strong {
+    @apply font-bold;
+  }
+}
+
+/* High Contrast Mode Adjustments */
+@media (prefers-contrast: high) {
+  :root {
+    --cosmic-space: #000000;
+    --cosmic-dark: #0a0a0a;
+    --cosmic-slate: #141414;
+    --cosmic-white: #ffffff;
+    --cosmic-light: #ffffff;
+    --cosmic-silver: #e0e0e0;
+  }
+  
+  .cosmic-card {
+    @apply border-cosmic-silver/30;
+  }
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
